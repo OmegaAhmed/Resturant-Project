@@ -1,9 +1,11 @@
-if ('serviceWorker' in navigator) {
+if (navigator.serviceWorker) {
 	navigator.serviceWorker.register('./sw.js')
-	.then(function() {
-		console.log('Registration worked!');
-	})
-	.catch(function() {
-		console.log('Registration failed!');
-	});
-}
+	  .then(registration => {
+		console.log(`Registration successful`);
+	  }).catch(error => {
+		console.log(`Service worker registration failed`);
+	  });
+  }
+  
+  
+  
